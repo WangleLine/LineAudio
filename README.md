@@ -1,2 +1,2 @@
 # LineAudio
- Easier Audio for Gamemaker
+Audio helper functions for Gamemaker
