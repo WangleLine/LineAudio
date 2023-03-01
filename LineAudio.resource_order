@@ -1,0 +1,9 @@
+{
+  "FolderOrderSettings": [
+    {"name":"Example","order":15,"path":"folders/Example.yy",},
+    {"name":"Sounds","order":1,"path":"folders/Example/Sounds.yy",},
+    {"name":"Sprites","order":2,"path":"folders/Example/Sprites.yy",},
+    {"name":"LineAudio","order":14,"path":"folders/LineAudio.yy",},
+  ],
+  "ResourceOrderSettings": [],
+}
