@@ -12,7 +12,6 @@
   "defaultScriptType": 1,
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Example","folderPath":"folders/Example.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Example/Rooms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sounds","folderPath":"folders/Example/Sounds.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Example/Sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"LineAudio","folderPath":"folders/LineAudio.yy",},
@@ -24,7 +23,13 @@
     "IDEVersion": "2023.2.1.75",
   },
   "resources": [
+    {"id":{"name":"break_2","path":"sounds/break_2/break_2.yy",},},
+    {"id":{"name":"break_4","path":"sounds/break_4/break_4.yy",},},
+    {"id":{"name":"break_1","path":"sounds/break_1/break_1.yy",},},
     {"id":{"name":"LineAudio","path":"scripts/LineAudio/LineAudio.yy",},},
+    {"id":{"name":"break_3","path":"sounds/break_3/break_3.yy",},},
+    {"id":{"name":"o_line_audio","path":"objects/o_line_audio/o_line_audio.yy",},},
+    {"id":{"name":"o_example","path":"objects/o_example/o_example.yy",},},
     {"id":{"name":"r_example","path":"rooms/r_example/r_example.yy",},},
   ],
   "RoomOrderNodes": [

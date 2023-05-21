@@ -5,5 +5,12 @@
     {"name":"Sprites","order":2,"path":"folders/Example/Sprites.yy",},
     {"name":"LineAudio","order":14,"path":"folders/LineAudio.yy",},
   ],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"break_2","order":1,"path":"sounds/break_2/break_2.yy",},
+    {"name":"break_4","order":3,"path":"sounds/break_4/break_4.yy",},
+    {"name":"break_3","order":2,"path":"sounds/break_3/break_3.yy",},
+    {"name":"o_line_audio","order":2,"path":"objects/o_line_audio/o_line_audio.yy",},
+    {"name":"o_example","order":4,"path":"objects/o_example/o_example.yy",},
+    {"name":"r_example","order":3,"path":"rooms/r_example/r_example.yy",},
+  ],
 }
