@@ -6,6 +6,7 @@ function line_audio_update()
 	
 		if initialized == false
 		{
+			// Poop
 			global.__line_audio_per_frame_stack_limit_array = array_create(sounds.enum_length,0);
 			global.__line_audio_stop_over_time_array = [];
 			global.__line_audio_everpresent_frame_counter = 0;
@@ -26,8 +27,7 @@ function line_audio_update()
 			global.__line_audio_music_to_play_audiogroup = undefined;
 			global.__line_audio_music_playing_currently = undefined;
 
-			stop_over_time_array = [];
-
+			// Define sounds
 			line_audio_define_sounds();
 		
 			initialized = true;
@@ -39,6 +39,16 @@ function line_audio_update()
 	{
 		global.__line_audio_per_frame_stack_limit_array[i] = 0;
 	}
+	
+	// TODO: Move this to its own function for setting the camera position and speed and stuff
+	/*
+	if instance_exists(obj_cam)
+	{
+		// Set Listener Position to Center of Camera
+		audio_listener_orientation(0,0,1,0,-1,0);
+		audio_listener_position(obj_cam.x,obj_cam.y,0);
+	}
+	*/
 	
 	// Stop faded-out sounds
 	var length = array_length(global.__line_audio_stop_over_time_array)
@@ -139,4 +149,22 @@ function line_audio_update()
 			}
 		}
 	}
+	
+	// Play Music
+	if global.__line_audio_music_to_play != undefined
+	&& global.__line_audio_music_to_play_audiogroup != undefined
+	{
+		// Check if audio group loaded (it always takes some time to load an audio group)
+		if audio_group_is_loaded(global.__line_audio_music_to_play_audiogroup)
+		{
+			// Play if not playing already
+			if audio_is_playing(global.__line_audio_music_to_play) == false
+			{
+				global.__line_audio_music_playing_currently = audio_play_sound(global.__line_audio_music_to_play,100,true);
+			}
+		}
+	}
+	
+	// Increment everpresent frame counter
+	global.__line_audio_everpresent_frame_counter++;
 }

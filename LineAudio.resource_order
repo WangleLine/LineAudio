@@ -14,7 +14,6 @@
     {"name":"LineAudioMacros","order":4,"path":"scripts/LineAudioMacros/LineAudioMacros.yy",},
     {"name":"LineAudioUtils","order":1,"path":"scripts/LineAudioUtils/LineAudioUtils.yy",},
     {"name":"sfx_example_wall_rock_break_3","order":2,"path":"sounds/sfx_example_wall_rock_break_3/sfx_example_wall_rock_break_3.yy",},
-    {"name":"o_line_audio","order":2,"path":"objects/o_line_audio/o_line_audio.yy",},
     {"name":"o_example","order":4,"path":"objects/o_example/o_example.yy",},
     {"name":"r_example","order":3,"path":"rooms/r_example/r_example.yy",},
   ],

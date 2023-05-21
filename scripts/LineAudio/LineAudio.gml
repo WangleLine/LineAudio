@@ -56,7 +56,7 @@ function line_audio_play_attached(enum_index,object_id,looping,volume_mod=1,pitc
 	var stack_limit = struct.stack_limit;
 
 	// Check Stack Limit
-	if o_line_audio.per_frame_stack_limit_array[enum_index] <= stack_limit
+	if global.__line_audio_per_frame_stack_limit_array[enum_index] <= stack_limit
 	{
 		// Play Attached Sound
 		var sound = noone;
@@ -72,7 +72,7 @@ function line_audio_play_attached(enum_index,object_id,looping,volume_mod=1,pitc
 		audio_emitter_falloff(emitter,180*falloff_mod,420*falloff_mod,1);
 		sound = audio_play_sound_on(emitter,sound_index,looping,1);
 		emitter_struct.sound = sound;
-		array_push(o_line_audio.attached_emitter_array,emitter_struct);
+		array_push(global.__line_audio_attached_emitter_array,emitter_struct);
 		
 		return sound;
 	}
@@ -101,13 +101,13 @@ function line_audio_play_ambience(enum_index)
 	};
 	
 	// Set All Other Ambience Sounds To Fade Out
-	var size = array_length(o_line_audio.ambience_sound_array)
+	var size = array_length(global.__line_audio_ambience_sound_array)
 	for(var i=0;i<size;i++)
 	{
-		o_line_audio.ambience_sound_array[i].fade_out = true;
+		global.__line_audio_ambience_sound_array[i].fade_out = true;
 	}
 	
-	array_push(o_line_audio.ambience_sound_array,sound_struct);
+	array_push(global.__line_audio_ambience_sound_array,sound_struct);
 }
 
 // Stop Audio
