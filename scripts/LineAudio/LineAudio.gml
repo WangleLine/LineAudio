@@ -22,7 +22,7 @@ function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,
 	// Kill Previous
 	if struct.kill_previous == true
 	{
-		__line_audio_stop_all_of_one_entry(index);
+		line_audio_stop_all_of_one_entry(index);
 	}
 	
 	var sound = undefined;
@@ -108,22 +108,6 @@ function line_audio_play_ambience(index)
 	}
 	
 	array_push(o_line_audio.ambience_sound_array,sound_struct);
-}
-
-// Update Line Audio
-function line_audio_update()
-{
-	// Stop Faded-out Sounds
-	var length = array_length(global.__line_audio_stop_over_time_array)
-	for(var i=0;i<length;i++)
-	{
-		var sound_instance = global.__line_audio_stop_over_time_array[i];
-		if audio_sound_get_gain(sound_instance) == 0
-		{
-			audio_stop_sound(sound_instance);
-			array_delete(global.__line_audio_stop_over_time_array,i,1);
-		}
-	}
 }
 
 // Stop Audio
