@@ -23,10 +23,12 @@
     "IDEVersion": "2023.4.0.84",
   },
   "resources": [
+    {"id":{"name":"LineAudioUpdate","path":"scripts/LineAudioUpdate/LineAudioUpdate.yy",},},
     {"id":{"name":"sfx_example_wall_rock_break_2","path":"sounds/sfx_example_wall_rock_break_2/sfx_example_wall_rock_break_2.yy",},},
     {"id":{"name":"sfx_example_wall_rock_break_4","path":"sounds/sfx_example_wall_rock_break_4/sfx_example_wall_rock_break_4.yy",},},
     {"id":{"name":"sfx_example_wall_rock_break_1","path":"sounds/sfx_example_wall_rock_break_1/sfx_example_wall_rock_break_1.yy",},},
     {"id":{"name":"LineAudio","path":"scripts/LineAudio/LineAudio.yy",},},
+    {"id":{"name":"LineAudioErrorChecking","path":"scripts/LineAudioErrorChecking/LineAudioErrorChecking.yy",},},
     {"id":{"name":"LineAudioDefinitions","path":"scripts/LineAudioDefinitions/LineAudioDefinitions.yy",},},
     {"id":{"name":"LineAudioMacros","path":"scripts/LineAudioMacros/LineAudioMacros.yy",},},
     {"id":{"name":"LineAudioUtils","path":"scripts/LineAudioUtils/LineAudioUtils.yy",},},

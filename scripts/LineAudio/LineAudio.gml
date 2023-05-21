@@ -1,7 +1,7 @@
 // Play Sound From Sound-Set
 function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,falloff_mod=1)
 {
-	if instance_exists(o_audio) == false exit;
+	__line_audio_error_check_controller_exists();
 	
 	// Sound Properties
 	var struct = __line_audio_get_struct(index);
@@ -43,7 +43,7 @@ function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,
 // Attach emitter onto object and play audio on it
 function line_audio_play_attached(index,object_id,looping,volume_mod=1,pitch_mod=1,falloff_mod=1)
 {
-	if instance_exists(o_audio) == false exit;
+	__line_audio_error_check_controller_exists();
 	
 	// Sound Properties
 	var struct = __line_audio_get_struct(index);
@@ -78,7 +78,7 @@ function line_audio_play_attached(index,object_id,looping,volume_mod=1,pitch_mod
 // Play Ambient Audio Loop
 function line_audio_play_ambience(index)
 {
-	if instance_exists(o_audio) == false exit;
+	__line_audio_error_check_controller_exists();
 	
 	// Sound Properties
 	var struct = __line_audio_get_struct(index);

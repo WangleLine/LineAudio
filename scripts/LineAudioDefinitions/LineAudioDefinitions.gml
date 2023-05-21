@@ -37,11 +37,11 @@ function line_audio_define_sounds()
 	*/
 	
 	// Fill In Blanks
-	line_audio_fill_definition_blanks();
+	__line_audio_fill_definition_blanks();
 }
 
 // Fill In Blanks
-function line_audio_fill_definition_blanks()
+function __line_audio_fill_definition_blanks()
 {
 	var length = array_length(global.sound_array);
 	for(var i=0;i<length;i++)
