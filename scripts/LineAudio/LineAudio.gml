@@ -2,19 +2,19 @@
 show_debug_message("Thank you for using LineAudio! You are using version "+LINE_AUDIO_VERSION+".");
 
 // Play Sound From Sound-Set
-function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,falloff_mod=1)
+function line_audio_play(enum_index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,falloff_mod=1)
 {
 	__line_audio_error_check_controller_exists();
 	
 	// Sound Properties
-	var struct = __line_audio_get_struct(index);
-	var sound_index = __line_audio_get_shuffled_index(index);
+	var struct = __line_audio_get_struct(enum_index);
+	var sound_index = __line_audio_get_shuffled_index(enum_index);
 	var sound_volume = random_range(struct.sound_volume_min,struct.sound_volume_max)*abs(volume_mod);
 	var sound_pitch = random_range(struct.sound_pitch_min,struct.sound_pitch_max)*abs(pitch_mod);
 	var per_frame_stack_limit = struct.stack_limit;
 
 	// Check Stack Limit
-	if o_line_audio.per_frame_stack_limit_array[index] > per_frame_stack_limit
+	if global.__line_audio_per_frame_stack_limit_array[enum_index] > per_frame_stack_limit
 	{
 		return undefined;
 	}
@@ -22,7 +22,7 @@ function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,
 	// Kill Previous
 	if struct.kill_previous == true
 	{
-		line_audio_stop_all_of_one_entry(index);
+		line_audio_stop_all_of_one_entry(enum_index);
 	}
 	
 	var sound = undefined;
@@ -38,25 +38,25 @@ function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,
 	}
     
 	// Push to Per-Frame Stack Limit Array
-	o_line_audio.per_frame_stack_limit_array[index]++;
+	global.__line_audio_per_frame_stack_limit_array[enum_index]++;
 		
 	return sound;
 }
 
 // Attach emitter onto object and play audio on it
-function line_audio_play_attached(index,object_id,looping,volume_mod=1,pitch_mod=1,falloff_mod=1)
+function line_audio_play_attached(enum_index,object_id,looping,volume_mod=1,pitch_mod=1,falloff_mod=1)
 {
 	__line_audio_error_check_controller_exists();
 	
 	// Sound Properties
-	var struct = __line_audio_get_struct(index);
-	var sound_index = __line_audio_get_shuffled_index(index);
+	var struct = __line_audio_get_struct(enum_index);
+	var sound_index = __line_audio_get_shuffled_index(enum_index);
 	var sound_volume = random_range(struct.sound_volume_min,struct.sound_volume_max)*abs(volume_mod);
 	var sound_pitch = random_range(struct.sound_pitch_min,struct.sound_pitch_max)*abs(pitch_mod);
 	var stack_limit = struct.stack_limit;
 
 	// Check Stack Limit
-	if o_line_audio.per_frame_stack_limit_array[index] <= stack_limit
+	if o_line_audio.per_frame_stack_limit_array[enum_index] <= stack_limit
 	{
 		// Play Attached Sound
 		var sound = noone;
@@ -79,13 +79,13 @@ function line_audio_play_attached(index,object_id,looping,volume_mod=1,pitch_mod
 }
 
 // Play Ambient Audio Loop
-function line_audio_play_ambience(index)
+function line_audio_play_ambience(enum_index)
 {
 	__line_audio_error_check_controller_exists();
 	
 	// Sound Properties
-	var struct = __line_audio_get_struct(index);
-	var sound_index = __line_audio_get_shuffled_index(index);
+	var struct = __line_audio_get_struct(enum_index);
+	var sound_index = __line_audio_get_shuffled_index(enum_index);
 	var sound_volume = random_range(struct.sound_volume_min,struct.sound_volume_max);
 	var sound_pitch = random_range(struct.sound_pitch_min,struct.sound_pitch_max);
 	

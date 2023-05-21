@@ -1,3 +1,4 @@
+/// @description Update LineAudio engine. Call this function once per frame.
 function line_audio_update()
 {
 	#region Initialization
@@ -9,7 +10,7 @@ function line_audio_update()
 			global.__line_audio_stop_over_time_array = [];
 			global.__line_audio_everpresent_frame_counter = 0;
 
-			// Emitter Arrays - They store structs
+			// Emitter arrays - they store structs
 			global.__line_audio_emitter_array = array_create(0);
 			global.__line_audio_attached_emitter_array = array_create(0);
 			global.__line_audio_ambience_sound_array = array_create(0);
@@ -17,7 +18,7 @@ function line_audio_update()
 			// Falloff model
 			audio_falloff_set_model(audio_falloff_exponent_distance_clamped);
 
-			// Audio Channel Number
+			// Audio channel number
 			audio_channel_num(256);
 
 			// Music
@@ -33,14 +34,13 @@ function line_audio_update()
 		}
 	#endregion
 	
-	// Reset Per-Frame Stack Limit
+	// Reset per-frame stack limit
 	for(var i=0;i<=sounds.enum_length;i++)
 	{
 		global.__line_audio_per_frame_stack_limit_array[i] = 0;
-		array_all()
 	}
 	
-	// Stop Faded-out Sounds
+	// Stop faded-out sounds
 	var length = array_length(global.__line_audio_stop_over_time_array)
 	for(var i=0;i<length;i++)
 	{
@@ -54,7 +54,7 @@ function line_audio_update()
 	
 	//if instance_exists(obj_ui_pause_0) == false
 	{
-		// Local Emitters
+		// Local emitters
 		var size = array_length(global.__line_audio_emitter_array);
 		for(var i=0;i<size;i++)
 		{
@@ -63,10 +63,10 @@ function line_audio_update()
 			{
 				if audio_emitter_exists(emitter_id)
 				{			
-					// When Time Runs Out
+					// When sound on emitter is no longer playing
 					if audio_is_playing(global.__line_audio_emitter_array[i].sound) == false
 					{
-						// Free Emitter, Remove from Array
+						// Free emitter, remove from array
 						audio_emitter_free(emitter_id);
 						delete global.__line_audio_emitter_array[i];
 						array_delete(global.__line_audio_emitter_array,i,1);
@@ -77,7 +77,7 @@ function line_audio_update()
 			}
 		}
 	
-		// Attached Local Emitters
+		// Attached local emitters
 		var size = array_length(global.__line_audio_attached_emitter_array)
 		for(var i=0;i<size;i++)
 		{
@@ -111,14 +111,14 @@ function line_audio_update()
 			}
 		}
 	
-		// Ambient Sounds (NOT EMITTERS)
+		// Ambient sounds (NOT EMITTERS!)
 		var size = array_length(global.__line_audio_ambience_sound_array)
 		for(var i=0;i<size;i++)
 		{
 			var sound_id = global.__line_audio_ambience_sound_array[i].sound_id;
 			if sound_id != undefined
 			{
-				// Volume Lerp
+				// Volume lerp
 				if global.__line_audio_ambience_sound_array[i].fade_out == false
 				{
 					audio_sound_gain(sound_id,global.__line_audio_ambience_sound_array[i].volume_goal,300);
@@ -127,7 +127,7 @@ function line_audio_update()
 				{
 					audio_sound_gain(sound_id,0,300);
 					
-					// Free Ambience Sound
+					// Free ambience sound
 					if audio_sound_get_gain(sound_id) <= 0.01
 					{
 						audio_stop_sound(sound_id);

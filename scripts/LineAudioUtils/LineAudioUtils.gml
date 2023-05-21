@@ -1,17 +1,17 @@
 // Get Sound Struct
-function __line_audio_get_struct(index)
+function __line_audio_get_struct(enum_index)
 {
 	// Force Inline
 	gml_pragma("forceinline");
 	
-	return global.sound_array[index];
+	return global.sound_array[enum_index];
 }
 
 // Get Random Playable Sound Index From Enum Index
 /// @ignore
-function __line_audio_get_random_index(index)
+function __line_audio_get_random_index(enum_index)
 {
-	var struct = __line_audio_get_struct(index);
+	var struct = __line_audio_get_struct(enum_index);
 	if struct.sound_index_variations <= 0
 	{
 		// No Variations
@@ -26,9 +26,9 @@ function __line_audio_get_random_index(index)
 
 /// @description Shuffle A Single Struct's Shuffle List
 /// @ignore
-function __line_audio_fill_shuffle_list(index)
+function __line_audio_fill_shuffle_list(enum_index)
 {
-	var struct = __line_audio_get_struct(index);
+	var struct = __line_audio_get_struct(enum_index);
 	if struct.sound_index_variations > 0
 	{
 		for(var r=1;r<=struct.sound_index_variations;r++)
@@ -48,9 +48,9 @@ function __line_audio_fill_shuffle_list(index)
 
 /// @description Get Shuffled Index
 /// @ignore
-function __line_audio_get_shuffled_index(index)
+function __line_audio_get_shuffled_index(enum_index)
 {
-	var struct = __line_audio_get_struct(index);
+	var struct = __line_audio_get_struct(enum_index);
 	
 	// Return Playable Sound Index
 	if struct.sound_index_variations <= 0
@@ -63,7 +63,7 @@ function __line_audio_get_shuffled_index(index)
 		// Refill Shuffle List
 		if ds_list_empty(struct.shuffle_list)
 		{
-			__line_audio_fill_shuffle_list(index);
+			__line_audio_fill_shuffle_list(enum_index);
 		}
 		
 		// Pick First And Delete Entry
@@ -109,9 +109,9 @@ function line_audio_get_audio_group_id_from_name(_string)
 
 /// @description Stop all sounds of one entry/enum member
 /// @ignore
-function line_audio_stop_all_of_one_entry(index)
+function line_audio_stop_all_of_one_entry(enum_index)
 {
-	var struct = __line_audio_get_struct(index);
+	var struct = __line_audio_get_struct(enum_index);
 	
 	if !is_struct(struct)
 	|| variable_struct_exists(struct,"sound_index_variations") == false
