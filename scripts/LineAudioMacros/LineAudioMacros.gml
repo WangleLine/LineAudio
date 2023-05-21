@@ -1,1 +1,2 @@
+#macro LINE_AUDIO_VERSION "1.0"
 #macro LINE_AUDIO_DEBUG_VERBOSE false

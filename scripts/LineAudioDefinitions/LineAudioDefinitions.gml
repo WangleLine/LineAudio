@@ -13,7 +13,7 @@ function line_audio_define_sounds()
 {
 	global.sound_array[sounds.example_wall_rock_break] =
 	{
-		sound_index : "sfx_example_wall_rock_break_1",
+		sound_index : "sfx_example_wall_rock_break",
 		sound_pitch_min : 0.8,
 		sound_pitch_max : 1.2,
 		sound_volume : 0.8

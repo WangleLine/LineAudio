@@ -11,7 +11,7 @@ function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,
 	var per_frame_stack_limit = struct.stack_limit;
 
 	// Check Stack Limit
-	if o_audio.per_frame_stack_limit_array[index] > per_frame_stack_limit
+	if o_line_audio.per_frame_stack_limit_array[index] > per_frame_stack_limit
 	{
 		return undefined;
 	}
@@ -35,7 +35,7 @@ function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,
 	}
     
 	// Push to Per-Frame Stack Limit Array
-	o_audio.per_frame_stack_limit_array[index]++;
+	o_line_audio.per_frame_stack_limit_array[index]++;
 		
 	return sound;
 }
@@ -53,7 +53,7 @@ function line_audio_play_attached(index,object_id,looping,volume_mod=1,pitch_mod
 	var stack_limit = struct.stack_limit;
 
 	// Check Stack Limit
-	if o_audio.per_frame_stack_limit_array[index] <= stack_limit
+	if o_line_audio.per_frame_stack_limit_array[index] <= stack_limit
 	{
 		// Play Attached Sound
 		var sound = noone;
@@ -69,7 +69,7 @@ function line_audio_play_attached(index,object_id,looping,volume_mod=1,pitch_mod
 		audio_emitter_falloff(emitter,180*falloff_mod,420*falloff_mod,1);
 		sound = audio_play_sound_on(emitter,sound_index,looping,1);
 		emitter_struct.sound = sound;
-		array_push(o_audio.attached_emitter_array,emitter_struct);
+		array_push(o_line_audio.attached_emitter_array,emitter_struct);
 		
 		return sound;
 	}
@@ -98,13 +98,13 @@ function line_audio_play_ambience(index)
 	};
 	
 	// Set All Other Ambience Sounds To Fade Out
-	var size = array_length(o_audio.ambience_sound_array)
+	var size = array_length(o_line_audio.ambience_sound_array)
 	for(var i=0;i<size;i++)
 	{
-		o_audio.ambience_sound_array[i].fade_out = true;
+		o_line_audio.ambience_sound_array[i].fade_out = true;
 	}
 	
-	array_push(o_audio.ambience_sound_array,sound_struct);
+	array_push(o_line_audio.ambience_sound_array,sound_struct);
 }
 
 // Update Line Audio
