@@ -1,3 +1,6 @@
+// Greeting
+show_debug_message("Thank you for using LineAudio! You are using version "+LINE_AUDIO_VERSION+".");
+
 // Play Sound From Sound-Set
 function line_audio_play(index,x=undefined,y=undefined,volume_mod=1,pitch_mod=1,falloff_mod=1)
 {
