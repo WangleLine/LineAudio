@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSound",
   "resourceVersion": "1.0",
-  "name": "break_4",
+  "name": "sfx_example_wall_rock_break_4",
   "audioGroupId": {
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
@@ -17,7 +17,7 @@
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "break_4.ogg",
+  "soundFile": "sfx_example_wall_rock_break_4.ogg",
   "type": 1,
   "volume": 1.0,
 }
