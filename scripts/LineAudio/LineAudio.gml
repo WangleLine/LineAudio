@@ -75,58 +75,6 @@ function line_audio_play_attached(index,object_id,looping,volume_mod=1,pitch_mod
 	}
 }
 
-// Play Footstep Sound
-function line_audio_play_footstep()
-{
-	if instance_exists(o_audio) == false exit;
-	
-	var layer_id = layer_get_id("Tiles");
-	var tilemap_id = layer_tilemap_get_id(layer_id);
-	var data = tilemap_get_at_pixel(tilemap_id,global.last_x,global.last_y+7);
-	var a = tile_get_index(data);
-	
-	// Footsteps based on Material
-	switch(tilemap_get_tileset(tilemap_id))
-	{
-		// Crystal Caves
-		case ts_crystal_caves:
-			switch(a)
-			{
-				default:
-					line_audio_play(sounds.footstep_concrete);
-					line_audio_play(sounds.footstep_add_grit); break;
-				case 40:
-				case 41:
-				case 48:
-				case 49:
-					line_audio_play(sounds.footstep_wood); break;
-				case 50:
-					line_audio_play(sounds.footstep_dirt); break;
-			}
-			break;
-			
-		// Hypogeum
-		case ts_hypogeum:
-			switch(a)
-			{
-				default:
-					line_audio_play(sounds.footstep_concrete);
-					line_audio_play(sounds.footstep_add_grit); break;
-				case 32:
-				case 33:
-				case 34:
-				case 35:
-					line_audio_play(sounds.footstep_dirt); break;
-				case 36:
-				case 37:
-				case 38:
-				case 39:
-					line_audio_play(sounds.footstep_wood); break;
-			}
-			break;
-	}
-}
-
 // Play Ambient Audio Loop
 function line_audio_play_ambience(index)
 {
