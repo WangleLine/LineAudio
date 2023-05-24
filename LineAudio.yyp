@@ -32,6 +32,7 @@
     {"id":{"name":"LineAudioDefinitions","path":"scripts/LineAudioDefinitions/LineAudioDefinitions.yy",},},
     {"id":{"name":"LineAudioMacros","path":"scripts/LineAudioMacros/LineAudioMacros.yy",},},
     {"id":{"name":"LineAudioUtils","path":"scripts/LineAudioUtils/LineAudioUtils.yy",},},
+    {"id":{"name":"LineAudioMusic","path":"scripts/LineAudioMusic/LineAudioMusic.yy",},},
     {"id":{"name":"sfx_example_wall_rock_break_3","path":"sounds/sfx_example_wall_rock_break_3/sfx_example_wall_rock_break_3.yy",},},
     {"id":{"name":"o_example","path":"objects/o_example/o_example.yy",},},
     {"id":{"name":"r_example","path":"rooms/r_example/r_example.yy",},},
