@@ -116,7 +116,7 @@ function line_audio_stop_all_of_one_entry(enum_index)
 	if !is_struct(struct)
 	|| variable_struct_exists(struct,"sound_index_variations") == false
 	{
-		trace("__line_audio_stop_all_of_one_entry failed!");
+		__line_audio_trace("__line_audio_stop_all_of_one_entry failed!");
 		exit;
 	}
 	
@@ -137,3 +137,4 @@ function line_audio_stop_all_of_one_entry(enum_index)
 		}
 	}
 }
+

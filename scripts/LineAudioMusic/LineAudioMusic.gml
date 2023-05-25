@@ -47,7 +47,7 @@ function line_audio_music_load_audiogroup(audiogroup,also_unload_all_others=true
 	// Error
 	if audiogroup == undefined 
 	{
-		//trace("line_audio_music_load_audiogroup: undefined audiogroup");
+		__line_audio_trace("line_audio_music_load_audiogroup: undefined audiogroup");
 		exit;
 	};
 	

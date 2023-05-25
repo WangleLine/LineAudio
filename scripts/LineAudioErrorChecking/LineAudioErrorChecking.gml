@@ -9,3 +9,25 @@ function __line_audio_error_check_controller_exists()
 	}
 	*/
 }
+
+// Trace
+function __line_audio_trace()
+{
+	var r = "LineAudio: ";
+	for (var i=0; i<argument_count; i++)
+	{
+	    r += string(argument[i]) + " ";
+	}
+	show_debug_message(r);
+}
+
+// Trace Error
+function __line_audio_trace_error()
+{
+	var r = "LineAudio: ";
+	for (var i=0; i<argument_count; i++)
+	{
+	    r += string(argument[i]) + " ";
+	}
+	show_error(r,true);
+}

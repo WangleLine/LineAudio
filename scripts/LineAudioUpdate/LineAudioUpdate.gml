@@ -143,7 +143,7 @@ function line_audio_update()
 						audio_stop_sound(sound_id);
 						array_delete(global.__line_audio_ambience_sound_array,i,1);
 						size--;
-						//trace("AMBIENCE SOUND FREED");
+						//__line_audio_trace("AMBIENCE SOUND FREED");
 					}
 				}
 			}
