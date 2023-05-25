@@ -40,16 +40,6 @@ function line_audio_update()
 		global.__line_audio_per_frame_stack_limit_array[i] = 0;
 	}
 	
-	// TODO: Move this to its own function for setting the camera position and speed and stuff
-	/*
-	if instance_exists(obj_cam)
-	{
-		// Set Listener Position to Center of Camera
-		audio_listener_orientation(0,0,1,0,-1,0);
-		audio_listener_position(obj_cam.x,obj_cam.y,0);
-	}
-	*/
-	
 	// Stop faded-out sounds
 	var length = array_length(global.__line_audio_stop_over_time_array)
 	for(var i=0;i<length;i++)
@@ -167,4 +157,11 @@ function line_audio_update()
 	
 	// Increment everpresent frame counter
 	global.__line_audio_everpresent_frame_counter++;
+}
+
+// Update position of audio listener
+function line_audio_update_listener_position(x,y,z=0)
+{
+	audio_listener_orientation(0,0,1,0,-1,0);
+	audio_listener_position(x,y,z);
 }
