@@ -29,6 +29,7 @@
     {"id":{"name":"sfx_example_wall_rock_break_1","path":"sounds/sfx_example_wall_rock_break_1/sfx_example_wall_rock_break_1.yy",},},
     {"id":{"name":"LineAudio","path":"scripts/LineAudio/LineAudio.yy",},},
     {"id":{"name":"LineAudioErrorChecking","path":"scripts/LineAudioErrorChecking/LineAudioErrorChecking.yy",},},
+    {"id":{"name":"s_example_wall","path":"sprites/s_example_wall/s_example_wall.yy",},},
     {"id":{"name":"LineAudioDefinitions","path":"scripts/LineAudioDefinitions/LineAudioDefinitions.yy",},},
     {"id":{"name":"LineAudioMacros","path":"scripts/LineAudioMacros/LineAudioMacros.yy",},},
     {"id":{"name":"LineAudioUtils","path":"scripts/LineAudioUtils/LineAudioUtils.yy",},},

@@ -10,6 +10,7 @@
     {"name":"sfx_example_wall_rock_break_2","order":1,"path":"sounds/sfx_example_wall_rock_break_2/sfx_example_wall_rock_break_2.yy",},
     {"name":"sfx_example_wall_rock_break_4","order":3,"path":"sounds/sfx_example_wall_rock_break_4/sfx_example_wall_rock_break_4.yy",},
     {"name":"LineAudioErrorChecking","order":5,"path":"scripts/LineAudioErrorChecking/LineAudioErrorChecking.yy",},
+    {"name":"s_example_wall","order":4,"path":"sprites/s_example_wall/s_example_wall.yy",},
     {"name":"LineAudioDefinitions","order":3,"path":"scripts/LineAudioDefinitions/LineAudioDefinitions.yy",},
     {"name":"LineAudioMacros","order":4,"path":"scripts/LineAudioMacros/LineAudioMacros.yy",},
     {"name":"LineAudioUtils","order":1,"path":"scripts/LineAudioUtils/LineAudioUtils.yy",},
