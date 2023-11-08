@@ -34,7 +34,7 @@ function line_audio_play(enum_index,x=undefined,y=undefined,volume_mod=1,pitch_m
 	else
 	{
 		// Local Sound
-		sound = audio_play_sound_at(sound_index,x,y,0,180*falloff_mod,420*falloff_mod,1,false,10,sound_volume,0,sound_pitch);
+		sound = audio_play_sound_at(sound_index,x,y,0,LINE_AUDIO_FALLOFF_REF_DIST*falloff_mod,LINE_AUDIO_FALLOFF_MAX_DIST*falloff_mod,1,false,10,sound_volume,0,sound_pitch);
 	}
     
 	// Push to Per-Frame Stack Limit Array
@@ -69,7 +69,7 @@ function line_audio_play_attached(enum_index,object_id,looping,volume_mod=1,pitc
 			attached_to : object_id
 		};
 		audio_emitter_position(emitter,object_id.x,object_id.y,0);
-		audio_emitter_falloff(emitter,180*falloff_mod,420*falloff_mod,1);
+		audio_emitter_falloff(emitter,LINE_AUDIO_FALLOFF_REF_DIST*falloff_mod,LINE_AUDIO_FALLOFF_MAX_DIST*falloff_mod,1);
 		sound = audio_play_sound_on(emitter,sound_index,looping,1);
 		emitter_struct.sound = sound;
 		array_push(global.__line_audio_attached_emitter_array,emitter_struct);
