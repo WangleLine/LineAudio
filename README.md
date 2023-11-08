@@ -1,2 +1,2 @@
 # LineAudio
-Better audio engine for Gamemaker
+Small Audio Engine & Wrapper for Gamemaker
