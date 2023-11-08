@@ -4,6 +4,7 @@
   "name": "o_example_wall",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": false,
   "overriddenProperties": [],
@@ -27,7 +28,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "s_example_wall",
+    "path": "sprites/s_example_wall/s_example_wall.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
